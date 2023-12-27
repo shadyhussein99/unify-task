@@ -18,7 +18,7 @@ export const currentTasksSlice = createSlice({
     },
     removeCurrentTask: (state, action: PayloadAction<number>) => {
       const removeTodo = state.value.filter(
-        (todo, index) => index !== action.payload
+        (_, index) => index !== action.payload
       );
       state.value = removeTodo;
     },
