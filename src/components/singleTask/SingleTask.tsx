@@ -55,7 +55,7 @@ function SingleTask({ index, task, status }: SingleTaskProps) {
     if (editTodo.isEdit) {
       if (status === "current") {
         const requiredTask = currentTasks.find(
-          (task, index) => index === editTodo.order
+          (_, index) => index === editTodo.order
         );
 
         if (requiredTask) {
@@ -64,7 +64,7 @@ function SingleTask({ index, task, status }: SingleTaskProps) {
         }
       } else {
         const requiredTask = archivedTasks.find(
-          (task, index) => index === editTodo.order
+          (_, index) => index === editTodo.order
         );
 
         if (requiredTask) {
@@ -73,7 +73,7 @@ function SingleTask({ index, task, status }: SingleTaskProps) {
         }
       }
     }
-  }, [editTodo.isEdit, editTodo.order, currentTasks, archivedTasks, setValue]);
+  }, [editTodo.isEdit, editTodo.order, currentTasks, archivedTasks, status, setValue]);
 
   // Edit TODO
   const onSubmit: SubmitHandler<Tasks> = (data) => {
@@ -119,7 +119,7 @@ function SingleTask({ index, task, status }: SingleTaskProps) {
   // Archive TODO
   const handleArchiveTodo = (todoIndex: number) => {
     const requiredTodo = currentTasks.find(
-      (task, index) => index === todoIndex
+      (_, index) => index === todoIndex
     );
 
     if (requiredTodo) {
@@ -132,7 +132,7 @@ function SingleTask({ index, task, status }: SingleTaskProps) {
   // Restore TODO
   const handleRestoreTodo = (todoIndex: number) => {
     const requiredTodo = archivedTasks.find(
-      (task, index) => index === todoIndex
+      (_, index) => index === todoIndex
     );
 
     if (requiredTodo) {

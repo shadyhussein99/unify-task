@@ -129,7 +129,7 @@ function Header() {
           <FormControlLabel
             control={<MaterialUISwitch sx={{ m: 1 }} />}
             label=""
-            onChange={(event, checked) => dispatch(toggleTheme(checked))}
+            onChange={(_, checked) => dispatch(toggleTheme(checked))}
           />
         </FormGroup>
       </div>

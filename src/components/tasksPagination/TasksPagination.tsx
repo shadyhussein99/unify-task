@@ -13,7 +13,7 @@ type TasksPaginationProps = {
 function TasksPagination({tasks, itemsPerPage, page, setPage}: TasksPaginationProps) {
 
   const handlePagination = (
-    event: React.ChangeEvent<unknown>,
+    _: React.ChangeEvent<unknown>,
     value: number
   ) => {
     setPage(value);
